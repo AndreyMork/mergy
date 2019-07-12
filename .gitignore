@@ -1,0 +1,17 @@
+node_modules
+dist
+
+coverage
+reports
+flow-coverage
+
+flow-typed
+
+configs
+temp
+
+.env
+.diff
+
+*.log
+*.tgz

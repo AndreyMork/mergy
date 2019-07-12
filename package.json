@@ -1,0 +1,85 @@
+{
+  "name": "config-merger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "keywords": [
+    "config",
+    "merge",
+    "merger",
+    "yaml",
+    "yml",
+    "json"
+  ],
+  "bin": {
+    "config-merger": "dist/bin/configMerger.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "make full-test && make build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreyMork/config-merger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndreyMork/config-merger.git/issues"
+  },
+  "homepage": "https://github.com/AndreyMork/config-merger.git#readme",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "commander": "^2.19.0",
+    "js-yaml": "^3.12.2",
+    "mz": "^2.7.0"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "^1.1.0",
+    "@acme/eslint-plugin": "^1.0.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@stryker-mutator/babel-transpiler": "^2.0.0",
+    "@stryker-mutator/core": "^2.0.0",
+    "@stryker-mutator/html-reporter": "^2.0.0",
+    "@stryker-mutator/javascript-mutator": "^2.0.0",
+    "@stryker-mutator/jest-runner": "^2.0.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "babel-eslint": "^10.0.1",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-eslint-comments": "^3.1.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-optimize-regex": "^1.1.6",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-sort-class-members": "^1.5.0",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "flow-bin": "^0.102.0",
+    "flow-coverage-report": "^0.6.1",
+    "flow-typed": "^2.5.1",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "semantic-release": "^15.13.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

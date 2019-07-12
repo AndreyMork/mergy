@@ -1,0 +1,8 @@
+{
+  "b": [5],
+  "c": true,
+  "obj": {
+    "a": [true, false],
+    "c": "foo"
+  }
+}
