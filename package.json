@@ -29,7 +29,7 @@
     "url": "https://github.com/AndreyMork/mergy.git/issues"
   },
   "homepage": "https://github.com/AndreyMork/mergy.git#readme",
-  "author": "",
+  "author": "Andrey Mork",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.4.3",
