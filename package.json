@@ -1,5 +1,5 @@
 {
-  "name": "config-merger",
+  "name": "mergy",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "json"
   ],
   "bin": {
-    "config-merger": "dist/bin/configMerger.js"
+    "mergy": "dist/bin/mergy.js"
   },
   "files": [
     "dist"
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreyMork/config-merger.git"
+    "url": "https://github.com/AndreyMork/mergy.git"
   },
   "bugs": {
-    "url": "https://github.com/AndreyMork/config-merger.git/issues"
+    "url": "https://github.com/AndreyMork/mergy.git/issues"
   },
-  "homepage": "https://github.com/AndreyMork/config-merger.git#readme",
+  "homepage": "https://github.com/AndreyMork/mergy.git#readme",
   "author": "",
   "license": "ISC",
   "dependencies": {
