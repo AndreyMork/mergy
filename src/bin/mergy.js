@@ -7,9 +7,9 @@ import program from 'commander';
 import fs from 'mz/fs';
 
 import { version } from '../../package.json';
-import type { MergeConfigsOptionsType, AvailableFormatsType } from '../types/index.types';
+import type { MergyOptionsType, AvailableFormatsType } from '../types/index.types';
 
-import mergeConfigs from '..';
+import { readParseAndMerge } from '..';
 
 
 type CmdType = {|
@@ -28,7 +28,7 @@ program
     'json',
   )
   .action(async (filePaths: $ReadOnlyArray<string>, cmd: CmdType) => {
-    const options: MergeConfigsOptionsType = {
+    const options: MergyOptionsType = {
       format: cmd.format,
     };
 
@@ -36,7 +36,7 @@ program
       path.resolve(filePath));
 
     try {
-      const res: string = await mergeConfigs(resolvedPaths, options);
+      const res: string = await readParseAndMerge(resolvedPaths, options);
 
       if (cmd.out == null) {
         console.log(res); // eslint-disable-line no-console

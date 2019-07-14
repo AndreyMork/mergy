@@ -1,14 +1,12 @@
 // @flow
 
+export type AvailableFormatsType = 'json' | 'yaml';
+
 export type FileObjectType = {|
   content: string,
-  ext: string,
+  format: AvailableFormatsType,
 |};
 
-export type AvailableFormatsType = 'json' | 'yaml' | 'yml';
-
-export type ParsedValueType = null | string | number | boolean | {} | $ReadOnlyArray<mixed>;
-
-export type MergeConfigsOptionsType = {|
+export type MergyOptionsType = {|
   format: AvailableFormatsType,
 |};
