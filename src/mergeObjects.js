@@ -1,15 +1,16 @@
 // @flow
 
-import { union, isObject } from './utils';
+import { union, getType, isSimpleObject } from './utils';
 
 
-const bothAreObjects = (a: mixed, b: mixed): boolean %checks => isObject(a) && isObject(b);
+const bothAreSimpleObjects = (a: mixed, b: mixed): boolean %checks =>
+  isSimpleObject(a) && isSimpleObject(b);
 const bothAreArrays = (a: mixed, b: mixed): boolean %checks => Array.isArray(a) && Array.isArray(b);
 const oneIsUndefined = (a: mixed, b: mixed): boolean %checks => a === undefined || b === undefined;
 
 const mergeTwoObjects = (obj1: {}, obj2: {}): {} => {
   const mergeValues = (a: mixed, b: mixed): mixed => {
-    if (bothAreObjects(a, b)) {
+    if (bothAreSimpleObjects(a, b)) {
       return mergeTwoObjects(a, b);
     }
 
@@ -21,7 +22,7 @@ const mergeTwoObjects = (obj1: {}, obj2: {}): {} => {
       return a !== undefined ? a : b;
     }
 
-    throw new TypeError(`Can't merge ${typeof a} and ${typeof b}`);
+    throw new TypeError(`Cannot merge ${getType(a)} and ${getType(b)}`);
   };
 
   const obj1Keys: Set<string> = new Set(Object.keys(obj1));
@@ -36,4 +37,11 @@ const mergeTwoObjects = (obj1: {}, obj2: {}): {} => {
   }, {});
 };
 
-export default (...arrayOfObjects: $ReadOnlyArray<{}>): {} => arrayOfObjects.reduce((acc: {}, obj: {}): {} => mergeTwoObjects(acc, obj), {});
+export default (...items: $ReadOnlyArray<mixed>): {} =>
+  items.reduce((acc: {}, item: mixed): {} => {
+    if (!isSimpleObject(item)) {
+      throw new TypeError(`${getType(item)} is not a simple object`);
+    }
+
+    return mergeTwoObjects(acc, item);
+  }, {});

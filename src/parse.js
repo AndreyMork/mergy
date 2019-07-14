@@ -2,22 +2,23 @@
 
 import { safeLoad } from 'js-yaml';
 
-import type { FileObjectType, ParsedValueType } from './types/index.types';
+import type { AvailableFormatsType } from './types/index.types';
 
 
-type ParseSig = string => ParsedValueType;
-const parsers: { +[string]: ParseSig } = {
-  '.json': JSON.parse,
-  '.yaml': safeLoad,
-  '.yml': safeLoad,
+type ParseSig = string => mixed;
+const parsers: { +[AvailableFormatsType]: ParseSig } = {
+  json: JSON.parse,
+  yaml: safeLoad,
 };
 
-export default (fileObject: FileObjectType): ParsedValueType => {
-  const { content, ext }: FileObjectType = fileObject;
-
-  const parse: ParseSig = parsers[ext];
+type OptionsType = {|
+  content: string,
+  format: AvailableFormatsType,
+|};
+export default ({ content, format }: OptionsType): mixed => {
+  const parse: ?ParseSig = parsers[format];
   if (parse == null) {
-    throw new Error(`Extension '${ext}' is not supported`);
+    throw new Error(`Unknown format ${format}`);
   }
 
   return parse(content);
