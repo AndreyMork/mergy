@@ -34,8 +34,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "commander": "^2.19.0",
-    "js-yaml": "^3.12.2",
-    "mz": "^2.7.0"
+    "js-yaml": "^3.12.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "^1.1.0",

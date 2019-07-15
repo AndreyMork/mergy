@@ -2,9 +2,9 @@
 // @flow
 
 import path from 'path';
+import fs from 'fs';
 
 import program from 'commander';
-import fs from 'mz/fs';
 
 import { version } from '../../package.json';
 import type { MergyOptionsType, AvailableFormatsType } from '../types/index.types';
@@ -41,7 +41,7 @@ program
       if (cmd.out == null) {
         console.log(res); // eslint-disable-line no-console
       } else {
-        await fs.writeFile(path.resolve(cmd.out), res);
+        await fs.promises.writeFile(path.resolve(cmd.out), res);
       }
     } catch (error) {
       console.error(error); // eslint-disable-line no-console
