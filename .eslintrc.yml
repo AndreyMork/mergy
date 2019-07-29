@@ -7,7 +7,7 @@ parser: babel-eslint
 
 extends:
   - airbnb-base
-  - '@acme'
+  - '@acmecryptocorp'
   - 'plugin:jest/recommended'
   - 'plugin:jest/style'
 
