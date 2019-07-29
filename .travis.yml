@@ -4,6 +4,9 @@ language: node_js
 node_js:
   - node
 
+before_script:
+  - yarn flow-typed install
+
 script:
   - make lint
   - make flow
