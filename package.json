@@ -75,7 +75,7 @@
     "prettier": "^1.16.4",
     "prettier-eslint": "^9.0.0",
     "prettier-eslint-cli": "^5.0.0",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^17.2.3"
   },
   "config": {
     "commitizen": {
